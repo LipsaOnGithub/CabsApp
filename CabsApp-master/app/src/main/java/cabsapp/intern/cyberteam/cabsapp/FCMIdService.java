@@ -1,0 +1,16 @@
+package cabsapp.intern.cyberteam.cabsapp;
+
+import android.util.Log;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
+
+public class FCMIdService extends FirebaseInstanceIdService {
+    @Override
+    public void onTokenRefresh() {
+        super.onTokenRefresh();
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("FCM Token", "Refreshed token: " + refreshedToken);
+
+    }
+}
